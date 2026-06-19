@@ -1,1 +1,23 @@
+version: 0.2
 
+phases:
+  install:
+    commands:
+      - echo "Install phase"
+
+  pre_build:
+    commands:
+      - echo "Check files"
+      - test -f index.html
+      - test -f appspec.yml
+
+  build:
+    commands:
+      - echo "Build phase"
+      - echo "Simple CI test completed"
+
+artifacts:
+  files:
+    - index.html
+    - appspec.yml
+    - scripts/**/*
