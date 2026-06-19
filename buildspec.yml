@@ -7,14 +7,17 @@ phases:
 
   pre_build:
     commands:
-      - echo "Check files"
+      - echo "Checking required files..."
       - test -f index.html
       - test -f appspec.yml
+      - test -f scripts/install_dependencies.sh
+      - test -f scripts/start_server.sh
+      - test -f scripts/validate_service.sh
 
   build:
     commands:
       - echo "Build phase"
-      - echo "Simple CI test completed"
+      - echo "CI check completed successfully"
 
 artifacts:
   files:
